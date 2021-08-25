@@ -154,7 +154,9 @@ export class ContentTypeComponent implements OnInit, OnDestroy {
 
   processFormData(formData) {
     this.contentTypes = _.sortBy(formData, 'index');
+    console.log("this.contentTypes",this.contentTypes);
     const defaultTab = _.find(this.contentTypes, ['default', true]);
+    
     this.selectedContentType = this.activatedRoute.snapshot.queryParams.selectedTab || _.get(defaultTab, 'contentType') || 'textbook';
   }
 
@@ -173,6 +175,7 @@ export class ContentTypeComponent implements OnInit, OnDestroy {
       contentType: 'global'
     };
     this.formService.getFormConfig(formServiceInputParams).subscribe((data: any) => {
+      
       this.processFormData(data);
       this.updateForm();
       this.setContentTypeOnUrlChange();

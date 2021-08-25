@@ -135,5 +135,9 @@ export class WorkspacesidebarComponent implements OnInit {
       pageid: 'workspace'
     };
    }
+   redirectToCreatedEvents(){
+    this.router.navigate(['workspace/allMyEvents']);
+  }
+
 
 }

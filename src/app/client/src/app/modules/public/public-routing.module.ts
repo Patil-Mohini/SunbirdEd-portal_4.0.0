@@ -38,7 +38,10 @@ const routes: Routes = [
   },
   {
     path: 'guest-profile', loadChildren: './module/guest-profile/guest-profile.module#GuestProfileModule'
-  }
+  },
+  {
+    path: 'events', loadChildren: './module/events/events.module#EventsModule'
+  },
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -203,6 +203,14 @@ export class MainMenuComponent implements OnInit {
     }
   }
 
+  navigateToEventPage() {
+    if (this.activatedRoute.snapshot.queryParams.clientId === 'android') {
+      window.location.href = '/explore-course';
+    } else {
+      this.router.navigate(['/events']);
+    }
+  }
+
   getFeatureId(featureId, taskId) {
     return [{id: featureId, type: 'Feature'}, {id: taskId, type: 'Task'}];
   }

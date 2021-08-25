@@ -1,4 +1,5 @@
 /* Load fonts first*/
+
 @import "./fonts/notosans/notosans.css";
 @import "./fonts/notosans-bengali/notosansbengali.css";
 @import "./fonts/notosans-malayalam/notosansmalayalam.css";
@@ -10,8 +11,6 @@
 @import "./fonts/notosans-kannada/notosanskannada.css";
 @import "./fonts/notosans-oriya/notosansoriya.css";
 @import "./fonts/noto-nastaliqurdu/notonastaliqurdu.css";
-
-
 // base structure @import "~@project-sunbird/sb-styles/assets/mixins/mixins";
 @import "./mixins/mixins";
 @import "~@project-sunbird/sb-styles/assets/variables";
@@ -26,7 +25,7 @@
 @import "./global";
 @import "./pages/sbt-dropdown";
 // @import "./themes";
-
-
 // @import '~@swimlane/ngx-datatable/src/themes/material';
 @import '~@swimlane/ngx-datatable/assets/icons.css';
+//angular-calender
+@import "../../../node_modules/angular-calendar/css/angular-calendar.css";

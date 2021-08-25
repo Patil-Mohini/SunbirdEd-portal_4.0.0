@@ -8,7 +8,9 @@ import {
   UpforreviewContentplayerComponent, ReviewsubmissionsContentplayerComponent,
   FlagConentplayerComponent, PublishedPopupComponent, RequestChangesPopupComponent, LimitedPublishedComponent,
   AllContentComponent, FlagReviewerComponent, CollaboratingOnComponent, AllTextbooksComponent, NewCollectionEditorComponent } from './components';
-import { AuthGuard } from '../core/guard/auth-gard.service';
+  import { EventsComponent } from './components/events/events.component';
+  import { AllMyEventsComponent } from './components/all-my-events/all-my-events.component';
+  import { AuthGuard } from '../core/guard/auth-gard.service';
 const telemetryEnv = 'workspace';
 const objectType = 'workspace';
 const routes: Routes = [
@@ -280,6 +282,24 @@ const routes: Routes = [
       roles: 'workspace',
       breadcrumbs: [{ label: 'Home', url: '/home' }, { label: 'Profile', url: '/profile' }, { label: 'My Workspace', url: '' }],
       hideHeaderNFooter: true
+    }
+  },
+  {
+    path: 'add/event', component: EventsComponent,
+    data: {
+      roles: 'workspace',
+      breadcrumbs: [{ label: 'Home', url: '/home' }, { label: 'Profile', url: '/profile' }, { label: 'My Workspace', url: '' }],
+      hideHeaderNFooter: true
+    }
+  },
+  {
+    path: 'allMyEvents', component: AllMyEventsComponent,
+    data: {
+      telemetry: {
+        env: telemetryEnv, pageid: 'workspace-content-alltextbooks', subtype: 'paginate', uri: 'workspace/content/alltextbooks',
+        type: 'list', mode: 'create', object: { type: objectType, ver: '1.0' }
+      }, roles: 'alltextbookRole',
+      breadcrumbs: [{ label: 'Home', url: '/home' }, { label: 'Profile', url: '/profile' }, { label: 'My Workspace', url: '' }]
     }
   },
   {

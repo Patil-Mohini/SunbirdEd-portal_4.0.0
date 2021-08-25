@@ -2,13 +2,14 @@ const envHelper = require('./../helpers/environmentVariablesHelper.js')
 var azure = require('azure-storage')
 const dateFormat = require('dateformat')
 const uuidv1 = require('uuid/v1')
-const blobService = azure.createBlobService(envHelper.sunbird_azure_account_name, envHelper.sunbird_azure_account_key);
+    //const blobService = azure.createBlobService(envHelper.sunbird_azure_account_name, envHelper.sunbird_azure_account_key);
+const blobService = azure.createBlobService('sunbirddev', 'hVZeCECRUwsIZEL2h+GqF3bRo5Iz365G+zhrOZlYYYXBmrjuv4NyBv47xsmcvyQvAQPnnLG9r9iGil9TLgeyeA==');
 const { logger } = require('@project-sunbird/logger');
 
 const getGeneralisedResourcesBundles = (req, res) => {
     const container = envHelper.sunbird_azure_resourceBundle_container_name;
     const blobName = req.params.fileName;
-    blobService.getBlobToText(container, blobName, function (error, result, response) {
+    blobService.getBlobToText(container, blobName, function(error, result, response) {
         if (error && error.statusCode === 404) {
             logger.error({ msg: "Blob %s wasn't found container %s", blobName, container })
             const response = {

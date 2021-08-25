@@ -24,6 +24,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateStore } from '@ngx-translate/core';
 import { SbSearchFilterModule } from 'common-form-elements';
 
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -37,6 +39,7 @@ import { SbSearchFilterModule } from 'common-form-elements';
     SharedModule.forRoot(),
     WebExtensionModule.forRoot(),
     TelemetryModule.forRoot(),
+    
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,
